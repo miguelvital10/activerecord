@@ -1,0 +1,16 @@
+{
+    "name": "miguel/activerecord",
+    "description": "ActiveRecord",
+    "authors": [
+        {
+            "name": "Miguel Vital",
+            "email": "miguelvital05@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\":"app"
+        }
+    }
+}
