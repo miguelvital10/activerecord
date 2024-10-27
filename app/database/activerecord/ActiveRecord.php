@@ -2,9 +2,14 @@
 
 namespace app\database\activerecord;
 
+use app\database\interfaces\ActiveRecordInterface;
+
+use app\database\interfaces\UpdateInterface;
+
+
 use ReflectionClass;
 
-abstract class ActiveRecord 
+abstract class ActiveRecord implements ActiveRecordInterface
 {
 
     protected $table = null;
@@ -35,5 +40,24 @@ abstract class ActiveRecord
 
     public function getAttributes(){
         return $this->attributes;
+    }
+
+    public function update(UpdateInterface $updateInterface){
+
+    }
+    public function insert(){
+
+    }
+    public function delete(){
+
+    }
+    public function find(){
+
+    }
+    public function findBy(){
+
+    }
+    public function all(){
+
     }
 }
