@@ -43,7 +43,7 @@ abstract class ActiveRecord implements ActiveRecordInterface
     }
 
     public function update(UpdateInterface $updateInterface){
-
+        return $updateInterface->update();
     }
     public function insert(){
 
