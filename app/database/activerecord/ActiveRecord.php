@@ -43,9 +43,7 @@ abstract class ActiveRecord implements ActiveRecordInterface
     }
 
     public function update(UpdateInterface $updateInterface){
-        
-        var_dump($this);
-        //return $updateInterface->update($this);
+        return $updateInterface->update($this);
     }
     public function insert(){
 
