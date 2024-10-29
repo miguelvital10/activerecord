@@ -10,4 +10,4 @@ $user = new User;
 $user->update(new Update);
 $user->insert(new Insert);
 
-var_dump($user);
+echo $user->insert(new Insert);

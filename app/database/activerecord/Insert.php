@@ -8,6 +8,6 @@ use app\database\interfaces\ActiveRecordInterface;
 class Insert implements InsertInterface
 {
     public function insert(ActiveRecordInterface $activeRecordInterface){
-
+        return 'insert';
     }
 }
