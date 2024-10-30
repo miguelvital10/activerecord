@@ -2,6 +2,7 @@
 
 namespace app\database\activerecord;
 
+use app\database\interfaces\ActiveRecordExecuteInterface;
 use app\database\interfaces\ActiveRecordInterface;
 use app\database\interfaces\InsertInterface;
 use app\database\interfaces\UpdateInterface;
@@ -47,6 +48,10 @@ abstract class ActiveRecord implements ActiveRecordInterface
     }
     public function insert(InsertInterface $insertInterface){
         return $insertInterface->insert($this);
+    }
+
+    public function execute(ActiveRecordExecuteInterface $activeRecordExecuteInterface){
+        return ActiveRecordExecuteInterface->execute($this);
     }
     public function delete(){
 
