@@ -2,13 +2,13 @@
 
 namespace app\database\activerecord;
 
+use app\database\interfaces\ActiveRecordExecuteInterface;
 use app\database\interfaces\ActiveRecordInterface;
-use app\database\interfaces\UpdateInterface;
 
-class Update implements UpdateInterface
+class Update implements ActiveRecordExecuteInterface
 {
-    public function update(ActiveRecordInterface $activeRecordInterface)
+    public function execute(ActiveRecordInterface $activeRecordInterface)
     {
-
+        return 'update';
     }
 }

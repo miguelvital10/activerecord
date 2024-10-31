@@ -51,18 +51,6 @@ abstract class ActiveRecord implements ActiveRecordInterface
     }
 
     public function execute(ActiveRecordExecuteInterface $activeRecordExecuteInterface){
-        return ActiveRecordExecuteInterface->execute($this);
-    }
-    public function delete(){
-
-    }
-    public function find(){
-
-    }
-    public function findBy(){
-
-    }
-    public function all(){
-
+        return $activeRecordExecuteInterface->execute($this);
     }
 }
