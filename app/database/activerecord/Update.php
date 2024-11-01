@@ -4,12 +4,26 @@ namespace app\database\activerecord;
 
 use app\database\interfaces\ActiveRecordExecuteInterface;
 use app\database\interfaces\ActiveRecordInterface;
+use app\database\connection\Connection;
+use Exception;
 
 class Update implements ActiveRecordExecuteInterface
 {
     public function execute(ActiveRecordInterface $activeRecordInterface)
     {
-        $this->createQuery($activeRecordInterface);
+        try {
+
+            $query = $this->createQuery($activeRecordInterface);
+            
+            $connection = Connection::connect();
+            $prepare = $connection->prepare($query);
+            $prepare->execute($activeRecordInterface->getAttributes());
+
+            return $prepare->rowCount();
+
+        } catch (Exception $ex) {
+            var_dump($ex->getMessage());
+        }
     }
 
     private function createQuery(ActiveRecordInterface $activeRecordInterface)
