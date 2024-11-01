@@ -13,4 +13,4 @@ $user->firstName = 'Miguel';
 $user->lastName = 'Vital';
 $user->id = 1;
 
-echo $user->execute(new Find);
+echo $user->execute(new Update);
