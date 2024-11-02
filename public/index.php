@@ -10,8 +10,7 @@ use app\database\models\User;
 
 $user = new User;
 
-$user->firstName = 'Teste';
-$user->lastName = 'Active';
-$user->id = 1;
-
-var_dump($user->execute(new Update));
+$user->firstName = 'Sandra';
+$user->lastName = 'Santos';
+ 
+var_dump($user->execute(new Update(field:'id', value:'1')));
