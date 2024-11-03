@@ -7,6 +7,7 @@ use app\database\interfaces\ActiveRecordInterface;
 use app\database\connection\Connection;
 use Attribute;
 use Exception;
+use Throwable;
 
 class Update implements ActiveRecordExecuteInterface
 {
@@ -32,8 +33,8 @@ class Update implements ActiveRecordExecuteInterface
 
             return $prepare->rowCount();
 
-        } catch (Exception $ex) {
-            var_dump($ex->getMessage());
+        } catch (Throwable $throw) {
+           formatException($throw);
         }
     }
 

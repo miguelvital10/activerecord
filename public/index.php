@@ -12,5 +12,6 @@ $user = new User;
 
 $user->firstName = 'Sandra';
 $user->lastName = 'Santos';
+$user->id = 1;
  
 var_dump($user->execute(new Update(field:'id', value:'1')));
