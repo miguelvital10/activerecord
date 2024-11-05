@@ -29,9 +29,9 @@ class FindAll implements ActiveRecordExecuteInterface{
             $prepare = $connection->prepare($query);
             $prepare->execute($this->where);
 
-            return $prepare->fechAll();
+            return $prepare->fetchAll();
         } catch (Throwable $throw) {
-
+            formatException($throw);
         }
     }
 
@@ -45,7 +45,7 @@ class FindAll implements ActiveRecordExecuteInterface{
         $sql = "select {$this->fields} from {$activeRecordInterface->getTable()}";
         $sql .= (!$this->where) ? '' : " where {$where[0]} = :{$where[0]}";
         $sql .= (!$this->limit) ? '' : " limit {$this->limit}";
-        $sql .= (!$this->offset != '') ? "offset {$this->offset}" : "";
+        $sql .= (!$this->offset != '') ? " offset {$this->offset}" : "";
 
         return $sql;
     }
